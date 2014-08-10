@@ -1,0 +1,14 @@
+DESCRIPTION
+	clfmon is an HTTP log monitoring console program.
+
+USAGE
+	clfmon [logpath] [hitlimit]
+
+BUILD
+	clfmon depends on Go language utilities. Once it is installed, you can
+	download and build it with the command:
+
+	go get github.com/tmcb/clfmon
+
+AUTHOR
+	Tadeu Bastos
