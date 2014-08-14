@@ -13,7 +13,7 @@ last time frame.
 The time frame counter can be resetted.
 */
 type Bytes struct {
-	mutex      sync.Mutex
+	sync.Mutex
 	frameBytes uint64
 	totalBytes uint64
 }
@@ -23,8 +23,8 @@ ResetFrame throws away all info stored about the current time frame, so it is
 restarted afresh.
 */
 func (b *Bytes) ResetFrame() {
-	b.mutex.Lock()
-	defer b.mutex.Unlock()
+	b.Lock()
+	defer b.Unlock()
 	b.frameBytes = 0
 }
 
@@ -48,8 +48,8 @@ Add sums the informed number of bytes both to the time frame and to the total
 counters.
 */
 func (b *Bytes) Add(bytes uint64) {
-	b.mutex.Lock()
-	defer b.mutex.Unlock()
+	b.Lock()
+	defer b.Unlock()
 	b.frameBytes += bytes
 	b.totalBytes += bytes
 }

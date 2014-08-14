@@ -14,7 +14,7 @@ to get the same frame again. The frame to be used is restarted at every
 rotation.
 */
 type CircularHitCounter struct {
-	mutex      sync.Mutex
+	sync.Mutex
 	framesHits []uint
 	current    uint
 }
@@ -37,8 +37,8 @@ func (c *CircularHitCounter) Rotate() {
 	if len(c.framesHits) == 0 {
 		return
 	}
-	c.mutex.Lock()
-	defer c.mutex.Unlock()
+	c.Lock()
+	defer c.Unlock()
 	c.current += 1
 	c.current %= uint(len(c.framesHits))
 	c.framesHits[c.current] = 0
@@ -66,7 +66,7 @@ func (c *CircularHitCounter) Hits() uint64 {
 Hit stores a hit in the current frame.
 */
 func (c *CircularHitCounter) Hit() {
-	c.mutex.Lock()
-	defer c.mutex.Unlock()
+	c.Lock()
+	defer c.Unlock()
 	c.framesHits[c.current] += 1
 }

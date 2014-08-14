@@ -13,7 +13,7 @@ last time frame.
 The time frame counter can be resetted.
 */
 type SectionHitCounter struct {
-	mutex     sync.Mutex
+	sync.Mutex
 	frameHits map[string]uint
 	totalHits map[string]uint
 }
@@ -41,8 +41,8 @@ ResetFrame throws away all info stored about the current frame, so it is
 restarted afresh.
 */
 func (c *SectionHitCounter) ResetFrame() {
-	c.mutex.Lock()
-	defer c.mutex.Unlock()
+	c.Lock()
+	defer c.Unlock()
 	c.frameHits = make(map[string]uint)
 }
 
@@ -78,8 +78,8 @@ func (c *SectionHitCounter) FrameGreatestHit() (string, uint, error) {
 Hit adds a hit for the given section both in the frame and in total counters.
 */
 func (c *SectionHitCounter) Hit(section string) {
-	c.mutex.Lock()
-	defer c.mutex.Unlock()
+	c.Lock()
+	defer c.Unlock()
 	hit(c.frameHits, section)
 	hit(c.totalHits, section)
 }
