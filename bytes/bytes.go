@@ -5,7 +5,7 @@ import (
 )
 
 /*
-Struct Bytes holds amounts of bytes informed as transmitted.
+Bytes holds amounts of bytes informed as transmitted.
 
 It holds the total amount informed, as well as the amount informed during the
 last time frame.

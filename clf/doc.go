@@ -1,4 +1,4 @@
 /*
- Package clf handles entries in Common log format (CLF) files.
+Package clf handles entries in Common log format (CLF) files.
 */
 package clf

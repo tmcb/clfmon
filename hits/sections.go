@@ -6,9 +6,9 @@ import (
 )
 
 /*
-Struct SectionHitCounter holds the number of hits a section had in two different
-ways: its total since the start of monitoring, and the amount of hits in the
-last time frame.
+SectionHitCounter holds the number of hits a section had in two different ways:
+its total since the start of monitoring, and the amount of hits in the last time
+frame.
 
 The time frame counter can be resetted.
 */

@@ -7,7 +7,7 @@ import (
 )
 
 /*
-Struct Entry holds the different fields of a CLF entry.
+Entry holds the different fields of a CLF entry.
 */
 type Entry struct {
 	RemoteHost string

@@ -6,7 +6,7 @@ import (
 )
 
 /*
-Struct Control holds the control variables of a monitoring session.
+Control holds the control variables of a monitoring session.
 */
 type Control struct {
 	sectionHits *hits.SectionHitCounter

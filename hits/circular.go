@@ -5,8 +5,8 @@ import (
 )
 
 /*
-Struct CircularHitCounter holds the computed hits between two time instants.
-The difference between these two times is called a round.
+CircularHitCounter holds the computed hits between two time instants. The
+difference between these two times is called a round.
 
 Frames provide granularity to the round, storing the number of hits between the
 first and the last rotation. For a round with n frames, it takes n+1 rotations
