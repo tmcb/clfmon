@@ -39,7 +39,7 @@ func (c *CircularHitCounter) Rotate() {
 	}
 	c.Lock()
 	defer c.Unlock()
-	c.current += 1
+	c.current++
 	c.current %= uint(len(c.framesHits))
 	c.framesHits[c.current] = 0
 }
@@ -68,5 +68,5 @@ Hit stores a hit in the current frame.
 func (c *CircularHitCounter) Hit() {
 	c.Lock()
 	defer c.Unlock()
-	c.framesHits[c.current] += 1
+	c.framesHits[c.current]++
 }

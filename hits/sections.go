@@ -20,7 +20,7 @@ type SectionHitCounter struct {
 
 func hit(hitsMap map[string]uint, section string) {
 	if _, ok := hitsMap[section]; ok {
-		hitsMap[section] += 1
+		hitsMap[section]++
 	} else {
 		hitsMap[section] = 1
 	}
